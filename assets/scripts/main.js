@@ -1,5 +1,5 @@
 // Backend URL
-const serverURL = 'https://be1ab069-cefb-4c5f-917f-a13eb86ceebd-00-21xww2ssvkinv.kirk.replit.dev';
+const serverURL = 'https://fs-backend.glitch.me';
 
 
 // Dropdown menu
@@ -51,20 +51,3 @@ $('#sendNotification').click(function() {
 function setup() {
     $('#nav-username').text('@' + localStorage.getItem('currentUserUsername'));
 }
-
-    // // Obtenha o ID do usuário da URL
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const id = urlParams.get('id');
-
-    // $.ajax({
-    //     url: `${serverURL}/user-profile/${id}`,
-    //     type: 'GET',
-    //     success: function(user) {
-    //         $('#name').text(user.name);
-    //         $('#username').text('@' + user.username);
-    //         $('#country').text('País: ' + user.country);
-    //         $('#state').text('Estado: ' + user.state);
-    //         $('#city').text('Cidade: ' + user.city);
-    //         $('#neighborhood').text('Bairro: ' + user.neighborhood);
-    //         $('#birthDate').text('Idade: ' + user.birthDate);
-    //         $('#gender').text('Sexo:
