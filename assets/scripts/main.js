@@ -1,5 +1,5 @@
 // Backend URL
-const serverURL = 'https://fs-backend.glitch.me';
+const serverURL = 'http://localhost:3000';
 
 
 // Dropdown menu

@@ -2,24 +2,7 @@
 
 
 
-.user {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: var(--cor-terciaria);
-    margin: 25px;
-    padding: 25px;
-    border-radius: 25px;
-}
 
-.user {
-    background-color: red;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 100px;
-    width: 300px;
-    height: 300px;
-}
 
 .arena-name {
     font-size: 20px;

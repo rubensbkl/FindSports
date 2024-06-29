@@ -3,11 +3,18 @@ $(document).ready(function() {
         url: `${serverURL}/users`,
         type: 'GET',
         success: function(users) {
+            var esportes;
             users.forEach(function(user) {
                 var userElement = `
-                    <div class="user" data-id="${user.id}">
-                        <h2>${user.username}</h2>
-                        <p>Rating: ${user.rating}</p>
+                    <div class="user column box" data-id="${user.id}">
+                        <div class="negocinhodorating center">
+                            <p>${user.rating}</p>
+                        </div>
+                        <h2 class="center">${user.username}</h2>
+                        <div class="center">Esportes:</div>
+                        <div class="center row">
+                            ${Array.isArray(user.sports) ? user.sports.map(sport => `<div class="negocinhodorating">${sport}</div>`).join('') : ''}
+                        </div>
                     </div>
                 `;
                 $('#users').append(userElement);

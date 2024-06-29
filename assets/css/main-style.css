@@ -25,6 +25,11 @@
 
 
 /* Bootstrap 2 */
+
+.center {
+    margin: 0 auto;
+}
+
 .container {
     height: calc(100vh - 75px);
 }
@@ -666,4 +671,25 @@ form .contentBox .contentInput::placeholder {
 
 .notification button {
     margin-left: 1em;
+}
+
+
+.user {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    border-radius: 10px;
+    padding: 25px;
+    width: 300px;
+    height: 300px;
+}
+
+.negocinhodorating {
+    background-color: var(--cor-primaria);
+    border-radius: 1em;
+    padding: .25em .5em;
+}
+
+.ratingasfck {
+    margin: .25em .5em;
 }
