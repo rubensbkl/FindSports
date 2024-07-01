@@ -9,10 +9,10 @@ $('#registerEvento').submit(function(e) {
         headers: {'Authorization': `Bearer ${sessionStorage.getItem('currentUserToken')}`},
         data: JSON.stringify({
             name: $("#name").val(),
-            address: $("#address").val(),
-            sports: [$("#sport").val()],
+            arena: $("#arena").val(),
+            sport: $("#sport").val(),
             datetime: $("#datetime").val(),
-            description: $("#description").val()
+            description: $("#description").val(),
         }),
         contentType: 'application/json',
         success: function(response) {

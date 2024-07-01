@@ -100,7 +100,7 @@
 .box {
     border-radius: 1.75em;
     /* box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.5); */
-    padding: 2em;
+    padding: 1.5em;
     width: 100%;
     height: 100%;
     background-color: var(--cor-terciaria);
@@ -708,6 +708,7 @@ form .contentBox .contentInput::placeholder {
     background-color: var(--cor-terciaria);
     color: var(--cor-verde);
     border-radius: 1em;
+    justify-content: space-between;
 }
 
 .rating {
@@ -720,17 +721,16 @@ form .contentBox .contentInput::placeholder {
     text-align: center;
 }
 
-.sports {
+.sport {
     background-color: var(--cor-preto);
     color: var(--cor-primaria);
     border-radius: 1em;
     font-size: .75em;
     padding: .25em .5em;
     transition: .3s ease;
-    margin: 0 .25em;
 }
 
-.sports:hover {
+.sport:hover {
     background-color: var(--cor-primaria);
     color: var(--cor-preto);
     font-weight: 800;
@@ -749,4 +749,26 @@ form .contentBox .contentInput::placeholder {
     height: 100px;
     object-fit: cover;
     margin: 0 1em;
+}
+
+.arena-image {
+    border-radius: 1em;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 1em;
+}
+
+
+
+/* ===== SPORTS ===== */
+
+
+.sports-box {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    margin: .5em;
+    height: 5vh;
+    background-color: red;
 }

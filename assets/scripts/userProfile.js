@@ -32,7 +32,3 @@ $(document).ready(function() {
         }
     });
 });
-
-document.getElementById('button').addEventListener('click', function() {
-    window.location.href = '../pages/user-edit.html'; // Substitua por sua URL
-});

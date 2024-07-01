@@ -4,7 +4,7 @@ $(document).ready(function() {
     const id = urlParams.get('id');
 
     $.ajax({
-        url: `${serverURL}/arena-profile/${id}`,
+        url: `${serverURL}/event-profile/${id}`,
         type: 'GET',
         success: function(arena) {
             $('#name').text(arena.name);
@@ -28,13 +28,13 @@ $(document).ready(function() {
             }
             $('#teams').text((Array.isArray(arena.teams) ? arena.teams.join(', ') : 'N/A'));
             $('#rating').text(arena.rating);
-            // Adicione aqui o código para preencher os comentários e eventos do usuário
+            // Adicione aqui o código para preencher os comentários e eventos do evento
         },
         error: function(error) {
             if (error.status === 404) {
                 window.location.href = '../pages/404.html'; // substitua por sua URL da página 404
             } else {
-                console.error('Erro ao buscar usuário:', error);
+                console.error('Erro ao buscar evento:', error);
             }
         }
     });

@@ -15,7 +15,7 @@ $(document).ready(function() {
                             <p class="txt-center">@${user.username}</p>
                         </div>
                         <div class="center row">
-                            ${Array.isArray(user.sports) ? user.sports.map(sport => `<div class="sports">${sport}</div>`).join('') : ''}
+                            ${Array.isArray(user.sports) ? user.sports.map(sport => `<div class="sport">${sport}</div>`).join('') : ''}
                         </div>
                     </div>
                 `;

@@ -8,7 +8,7 @@ $(document).ready(function() {
                     <div class="list-container" data-id="${arena.id}">
                         <h2 class="arena-name">${arena.name}</h2>
                         <div class="center row">
-                            ${Array.isArray(arena.sports) ? arena.sports.map(sport => `<div class="sports">${sport}</div>`).join('') : ''}
+                            ${Array.isArray(arena.sports) ? arena.sports.map(sport => `<div class="sport">${sport}</div>`).join('') : ''}
                         </div>
                         <div class="row">
                             <div class="open">
@@ -43,7 +43,7 @@ document.querySelector('#search-input').addEventListener('input', filterList);
 
 function filterList() {
     const searchInput = document.querySelector('#search-input').value.toLowerCase();
-    const listItems = document.querySelectorAll('.list-box');
+    const listItems = document.querySelectorAll('.list-container');
 
     listItems.forEach(item => {
         // Assuming you want to compare the text content of the item
