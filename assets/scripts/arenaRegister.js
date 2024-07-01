@@ -5,7 +5,6 @@ $('#registerArena').submit(function(e) {
     $.ajax({
         url: `${serverURL}/arena-register`,
         type: 'POST',
-        headers: {'Authorization': `Bearer ${sessionStorage.getItem('currentUserToken')}`},
         data: JSON.stringify({
             name: $("#name").val(),
             address: $("#address").val(),

@@ -48,6 +48,62 @@ $('#sendNotification').click(function() {
     });
 });
 
+$(document).ready(function() {
+    // Assuming currentUserToken is stored in sessionStorage
+    var currentUserToken = sessionStorage.getItem('currentUserToken');
+
+    $.ajax({
+        url: `${serverURL}/notifications`,
+        type: 'GET',
+        contentType: 'application/json',
+        data: {
+            token: currentUserToken
+        },
+        success: function(response) {
+            console.log('Notifications fetched successfully:', response);
+            // Process team notifications
+            response.team.forEach(function(notification) {
+                var notificationElement = `
+                    <div class="notification">
+                        <p class="content">${notification.content}</p>
+                        <button class="button2">Aceitar</button>
+                    </div>
+                `;
+                $('#notificationContainer').append(notificationElement);
+            });
+            // Process event notifications
+            response.event.forEach(function(notification) {
+                var notificationElement = `
+                    <div class="notification">
+                        <p class="content">${notification.content}</p>
+                        <button class="button2">Aceitar</button>
+                    </div>
+                `;
+                $('#notificationContainer').append(notificationElement);
+            });
+        },
+        error: function(error) {
+            console.error('Error fetching notifications:', error);
+        }
+    });
+});
+
+
+
+
+
+
+
 function setup() {
+    // Define o nome de usuário na navegação
     $('#nav-username').text('@' + localStorage.getItem('currentUserUsername'));
+    
+    // Obtém o ID do usuário de localStorage
+    var userId = parseInt(sessionStorage.getItem('currentUserToken'), 10);
+    
+    // Encontra o link do perfil do usuário e atualiza seu href
+    var userProfileLink = document.querySelector('#myprofile');
+    if (userProfileLink) {
+        userProfileLink.href = `./pages/user-profile.html?id=${userId}`;
+    }
 }

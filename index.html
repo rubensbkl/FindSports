@@ -54,8 +54,8 @@
                     <i class="fa-regular fa-bell"></i>
                 </div>
                 <div class="navbox" onclick="toggleUserMenu()">
-                    <div id="nav-username">@username</div>
                     <i class="fa-regular fa-user" style="color: var(--cor-primaria);"></i>
+                    <div id="nav-username">@username</div>
                 </div>
             </div>
 
@@ -65,7 +65,12 @@
                         <h3>Menu</h2>
                     </div>
                     <hr>
-                    <a href="" class="sub-menu-link">
+                    <a href="./pages/user-profile.html?id=${userId}" class="sub-menu-link" id="myprofile">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Meu perfil</p>
+                        <span>></span>
+                    </a>
+                    <a href="./pages/user-edit.html" class="sub-menu-link">
                         <i class="fa-solid fa-gear"></i>
                         <p>Editar Perfil</p>
                         <span>></span>
@@ -99,16 +104,7 @@
                         <h3>Notificações</h2>
                     </div>
                     <hr>
-                    <div class="notificationContainer" id="notificationContainer">
-                        <div class="notification">
-                            <p class="content">Fulano te convidou para uma pelada!</p>
-                            <button class="button2">Aceitar</button>
-                        </div>
-                        <div class="notification">
-                            <p class="content">Fulano te convidou para uma pelada!</p>
-                            <button class="button2">Aceitar</button>
-                        </div>
-                    </div>
+                    <div class="notificationContainer" id="notificationContainer"></div>
                 </div>
             </div>
 

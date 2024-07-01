@@ -1,12 +1,15 @@
 // Editar usuário
 $('#editUser').submit(function(e) {
     e.preventDefault();
+
+    // Recupera o ID do usuário do sessionStorage
+    const userId = sessionStorage.getItem('currentUserToken');
   
     $.ajax({
         url: `${serverURL}/user-edit`,
         type: 'PUT',
         data: JSON.stringify({
-            id: sessionStorage.getItem('currentUserToken'),
+            id: parseInt(sessionStorage.getItem('currentUserToken'), 10),
             name: $("#name").val(),
             gender: $("#gender").val(),
             birthDate: $("#birthDate").val(),
@@ -21,7 +24,7 @@ $('#editUser').submit(function(e) {
         }),
         contentType: 'application/json',
         success: function(response) {
-            console.log('User edited successfully:', response);
+            console.log('User edited successfully:', response, parseInt(sessionStorage.getItem('currentUserToken'), 10));
             // Animação (InfoSubmit) para os campos de input
             ["name", "gender", "birthDate", "country", "state", "city", "neighborhood", "sports", "phone"].forEach(id => {
                 $("#" + id).addClass("infoSubmit");
