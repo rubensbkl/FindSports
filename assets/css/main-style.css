@@ -8,7 +8,7 @@
 
 /* Variáveis globais */
 :root {
-    --cor-primaria: #1ed760;
+    --cor-primaria: #1ed760; /* #1ed760 */
     --cor-secundaria: #4d4d4d;
     --cor-terciaria: #242424;
     --cor-preto: #121212;
@@ -728,6 +728,7 @@ form .contentBox .contentInput::placeholder {
     font-size: .75em;
     padding: .25em .5em;
     transition: .3s ease;
+    margin: 0 .25em;
 }
 
 .sport:hover {

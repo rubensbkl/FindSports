@@ -31,4 +31,56 @@ $(document).ready(function() {
             }
         }
     });
+
+    // Cadastrar comentário
+    $('#registerComment').submit(function(e) {
+        e.preventDefault();
+
+        // Supondo que você tenha inputs com IDs: commentText, commenterId, commentedUserId
+        const commentData = {
+            content: document.getElementById("commentContent").value, // Conteúdo do comentário
+            userId: parseInt(sessionStorage.getItem('currentUserToken'), 10), // ID do usuário que comenta
+            profileId: id // ID do usuário que recebe o comentário
+        };
+
+        $.ajax({
+            url: `${serverURL}/comment-register`, // Ajuste para o endpoint correto
+            type: 'POST',
+            data: JSON.stringify(commentData),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log('Comentário cadastrado com sucesso:', response);
+                $("#commentContent").addClass("infoSubmit");
+            },
+            error: function(error) {
+                console.error('Erro ao cadastrar o comentário:', error);
+            }
+        });
+    });
+
+    $("#name").on("focus", function() {
+        $(this).removeClass("infoSubmit");
+    });
+
+    $.ajax({
+        url: `${serverURL}comment-get/${id}`, // Ajuste para o endpoint correto
+        type: 'GET',
+        success: function(comments) {
+            // Supondo que 'comments' seja um array de objetos de comentários
+            comments.forEach(function(comment) {
+                // Cria um elemento para cada comentário
+                var commentElement = $('<div class="comment"></div>');
+                commentElement.text(comment.content); // Supondo que cada comentário tenha uma propriedade 'content'
+
+                // Adiciona o comentário à div de comentários
+                $('#comments').append(commentElement);
+            });
+        },
+        error: function(error) {
+            console.error('Erro ao buscar comentários:', error);
+        }
+    });
+
 });
+
+

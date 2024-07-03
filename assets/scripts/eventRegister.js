@@ -6,13 +6,13 @@ $('#registerEvento').submit(function(e) {
     $.ajax({
         url: `${serverURL}/evento-register`,
         type: 'POST',
-        headers: {'Authorization': `Bearer ${sessionStorage.getItem('currentUserToken')}`},
         data: JSON.stringify({
             name: $("#name").val(),
             arena: $("#arena").val(),
             sport: $("#sport").val(),
             datetime: $("#datetime").val(),
             description: $("#description").val(),
+            ownerId: parseInt(sessionStorage.getItem('currentUserToken'), 10)
         }),
         contentType: 'application/json',
         success: function(response) {
@@ -36,6 +36,18 @@ $('#registerEvento').submit(function(e) {
 });
 
 var choices = new Choices('#sport', {
+    allowHTML: true,
+    removeItemButton: false,
+    searchEnabled: true,
+    placeholder: true,
+    placeholderValue: 'Cadastrar esportes',
+    searchPlaceholderValue: 'Buscar esportes',
+    itemSelectText: 'Selecionar',
+    maxItemCount: 10,
+    renderChoiceLimit: 10
+});
+
+var choices = new Choices('#arena', {
     allowHTML: true,
     removeItemButton: false,
     searchEnabled: true,
