@@ -22,7 +22,6 @@ $(document).ready(function() {
                 `;
                 $('#teams').append(teamElement);
 
-                
             });
 
             // Adicione um evento de clique a cada elemento de usuário
