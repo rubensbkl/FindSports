@@ -44,11 +44,11 @@ function filterList() {
     const listItems = document.querySelectorAll('.list-container');
 
     listItems.forEach(item => {
-        // Assuming you want to compare the text content of the item
-        let text = item.textContent || item.innerText; // This gets the text content of the item
+        
+        let text = item.textContent || item.innerText; 
 
-        if (text.toLowerCase().includes(searchInput)) { // Use searchInput directly
-            item.style.display = ''; // Consider using 'block' or 'flex' depending on your layout
+        if (text.toLowerCase().includes(searchInput)) { 
+            item.style.display = '';
         } else {
             item.style.display = 'none';
         }
